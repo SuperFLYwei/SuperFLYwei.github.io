@@ -112,14 +112,14 @@
 			name: '50feet',
 			artist: 'SoMo',
 			lrc: '/downloads/lrc/50 Feet-SoMo.lrc',
-			cover: 'http://imge.kugou.com/stdmusic/150/20200117/20200117183337301294.jpg',
-			url: 'https://sharefs.yun.kugou.com/202003201934/eea10bba55e079d1e1aebabae7a53f29/G145/M0B/19/10/MYcBAFwFaiKAQFjBAC1dO5lHz3M010.mp3'
+			cover: '/cover/feet.jpg',
+			url: '/music/feet.mp3'
 		  },{
 			name: '平凡之路',
 			artist: '朴树',
 			lrc: '/downloads/lrc/平凡之路-朴树.lrc',
 			cover: '/cover/ps.jpg',
-			url: 'https://sharefs.yun.kugou.com/202003201929/3b3c70d318562443d9db4b6152eae80a/G136/M04/1A/17/KIcBAFtSTA6AYJczAEmH61ayjB8165.mp3'
+			url: '/music/pfzl.mp3'
       	}
 		]
 	  });
@@ -209,6 +209,27 @@
   	<time datetime="2020-03-19T17:17:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-19</time>
 </a>
         
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">605字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">2分</span>
+      </span>
+    </span>
+</div>
+          
+        
       </header>
     
     <div class="article-entry" itemprop="articleBody">
@@ -273,10 +294,35 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 Akmf wei
+			&copy; 2020 Akmf wei
+			<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+			<script>
+				var now = new Date(); 
+				function createtime() { 
+					var grt= new Date("03/20/2020 20:00:00");//此处修改你的建站时间或者网站上线时间 
+					now.setTime(now.getTime()+250); 
+					days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+					hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+					if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+					mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+					seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+					snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+					document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+					document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+				} 
+				setInterval("createtime()",250);
+			</script>	
+						
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+			<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+			<span id="busuanzi_container_site_pv">
+			  本站总访问量：<span id="busuanzi_value_site_pv"></span>次
+			</span>
+			<span class="post-meta-divider">|</span>
+			<span id="busuanzi_container_site_uv">
+				本站访客数：<span id="busuanzi_value_site_uv"></span>人
+			</span>
       	</div>
     </div>
   </div>
